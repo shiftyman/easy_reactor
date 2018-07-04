@@ -1,10 +1,8 @@
-package com.reactor;
+package com.reactor.multi_multithread;
 
 /**
- * Created by windlike.xu on 2018/6/11.
+ * Created by windlike.xu on 2018/6/25.
  */
-import com.reactor.single_multithread.TCPReactor;
-
 import java.io.IOException;
 
 public class Main {
@@ -14,7 +12,7 @@ public class Main {
         // TODO Auto-generated method stub
         try {
             TCPReactor reactor = new TCPReactor(1333);
-            reactor.run();
+            new Thread(reactor).start();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
